@@ -3,20 +3,23 @@ import './App.css';
 import { SplitScreen } from './components/split-screen';
 
 function App() {
-  const LeftSideComp = () => {
+  const LeftSideComp = ({title}) => {
     return (
-      <h2 style={{backgroundColor: 'crimson'}}>I am left!</h2>
+      <h2 style={{backgroundColor: 'crimson'}}>{title}</h2>
     )
   }
 
-  const RightSideComp = () => {
+  const RightSideComp = ({title}) => {
     return (
-      <h2 style={{backgroundColor: 'burlywood'}}>I am right!</h2>
+      <h2 style={{backgroundColor: 'burlywood'}}>{title}</h2>
     )
   }
 
   return (
-    <SplitScreen Left={LeftSideComp} Right={RightSideComp} leftWidth={1} rightWidth={3}/>
+    <SplitScreen leftWidth={1} rightWidth={3}>
+      <LeftSideComp title={'Left'} />
+      <RightSideComp title={'Right'} />
+    </SplitScreen>
   );
 }
 

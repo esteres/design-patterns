@@ -8,14 +8,16 @@ const Panel = styled.div`
   flex: ${(p) => p.flex};
 `;
 
-export const SplitScreen = ({Left, Right, leftWidth = 1, rightWidth = 1}) => {
+export const SplitScreen = ({ children, leftWidth = 1, rightWidth = 1 }) => {
+  const [left, right] = children;
+
   return (
     <Container>
       <Panel flex={leftWidth}>
-        <Left />
+        {left}
       </Panel>
       <Panel flex={rightWidth}>
-        <Right />
+        {right}
       </Panel>
     </Container>
   )
