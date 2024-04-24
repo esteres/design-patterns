@@ -1,11 +1,9 @@
 const RegularList = ({ items, sourceName, ItemComponent }) => {
     return (
       <>
-        {items.map((item, i) => {
-            console.log(item)
-            return <ItemComponent key={i} {...{ [sourceName]: item}} />
-          }
-        )}
+        {items.map((item, i) => (
+          <ItemComponent key={i} {...{ [sourceName]: item}} />
+        ))}
       </>
     );
 };
