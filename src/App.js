@@ -6,6 +6,7 @@ import { SmallBookListItem } from './components/lists/books/SmallListItems';
 import { LargeBookListItem } from './components/lists/books/LargeListItems';
 import RegularList from './components/lists/RegularList';
 import NumberedList from './components/lists/Numbered';
+import { Modal } from './components/Modal';
 import { authors } from './data/lists/authors';
 import { books } from './data/lists/books';
 
@@ -53,6 +54,9 @@ function App() {
         sourceName={'book'}
         ItemComponent={LargeBookListItem}
       />
+      <Modal>
+        <LargeBookListItem book={books[0]} />
+      </Modal>
     </>
   );
 }
