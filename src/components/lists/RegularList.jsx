@@ -3,7 +3,7 @@ const RegularList = ({ items, sourceName, ItemComponent }) => {
       <>
         {items.map((item, i) => {
             console.log(item)
-            return <ItemComponent key={i} author={item} />
+            return <ItemComponent key={i} {...{ [sourceName]: item}} />
           }
         )}
       </>
